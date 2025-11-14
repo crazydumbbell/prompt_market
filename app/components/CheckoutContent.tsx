@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { loadPaymentWidget, PaymentWidgetInstance } from '@tosspayments/payment-sdk';
+import { loadTossPayments } from '@tosspayments/tosspayments-sdk';
 import { Cart } from '@/types/database.types';
 import { Card, Text, Heading, Alert } from './ui';
 
@@ -12,7 +12,7 @@ interface CheckoutContentProps {
 }
 
 export default function CheckoutContent({ cartItems, userId }: CheckoutContentProps) {
-  const [paymentWidget, setPaymentWidget] = useState<PaymentWidgetInstance | null>(null);
+  const [paymentWidget, setPaymentWidget] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -39,7 +39,8 @@ export default function CheckoutContent({ cartItems, userId }: CheckoutContentPr
       }
 
       try {
-        const widget = await loadPaymentWidget(clientKey, customerKey);
+        const tossPayments = await loadTossPayments(clientKey);
+        const widget = tossPayments.widgets({ customerKey });
         setPaymentWidget(widget);
         setLoading(false);
       } catch (err) {

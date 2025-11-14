@@ -13,7 +13,7 @@
     "@clerk/nextjs": "^6.35.1",
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.81.1",
-    "@tosspayments/payment-sdk": "^1.9.2",
+    "@tosspayments/tosspayments-sdk": "^2.3.2",
     "next": "16.0.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
