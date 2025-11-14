@@ -1,6 +1,7 @@
 import { auth } from '@clerk/nextjs/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { redirect } from 'next/navigation';
+import type { Purchase, Prompt } from '@/types/database.types';
 import MyPageContent from '../components/MyPageContent';
 
 export default async function MyPage() {
@@ -48,6 +49,21 @@ export default async function MyPage() {
     console.log('🟢 [MyPage] 구매 내역 조회 성공:', purchases?.length || 0, '개');
   }
 
-  return <MyPageContent purchases={purchases || []} />;
+  // Supabase 관계 조회 결과를 UI에서 사용하는 Purchase 타입으로 정규화
+  const normalizedPurchases: Purchase[] =
+    (purchases ?? []).map((purchase: any) => {
+      const promptRelation = purchase.prompts;
+
+      const normalizedPrompt: Prompt | undefined = Array.isArray(promptRelation)
+        ? (promptRelation[0] as Prompt | undefined)
+        : (promptRelation as Prompt | undefined);
+
+      return {
+        ...purchase,
+        prompts: normalizedPrompt,
+      };
+    }) ?? [];
+
+  return <MyPageContent purchases={normalizedPurchases} />;
 }
 
