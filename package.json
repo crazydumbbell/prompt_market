@@ -6,12 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check-env": "node scripts/check-env.js"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.35.1",
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.81.1",
+    "@tosspayments/payment-sdk": "^1.9.2",
     "next": "16.0.3",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "svix": "^1.81.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

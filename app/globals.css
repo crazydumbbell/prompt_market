@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
+/* ===== Bauhaus Design System - CSS Variables ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Bauhaus Primary Colors */
+  --color-bauhaus-red: #E63946;
+  --color-bauhaus-blue: #1D3557;
+  --color-bauhaus-yellow: #F1C40F;
+  --color-bauhaus-black: #000000;
+  --color-bauhaus-white: #FFFFFF;
+  --color-bauhaus-gray: #95a5a6;
+
+  /* Brand Colors */
+  --color-brand-bg: #1D3557;
+  --color-brand-text: #FFFFFF;
+
+  /* Light Mode Colors */
+  --color-bg-primary: #FAFAFA;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #F5F5F5;
+  --color-bg-quaternary: #E8E8E8;
+
+  --color-text-primary: #000000;
+  --color-text-secondary: #2C3E50;
+  --color-text-tertiary: #5A6C7D;
+  --color-text-quaternary: #95a5a6;
+
+  --color-border-primary: #000000;
+  --color-border-secondary: #2C3E50;
+  --color-border-tertiary: #95a5a6;
+
+  /* Accent Colors */
+  --color-accent: #E63946;
+  --color-accent-hover: #D62828;
+  --color-accent-tint: #FFF5F5;
+
+  /* Link Colors */
+  --color-link-primary: #1D3557;
+  --color-link-hover: #E63946;
+
+  /* Status Colors */
+  --color-status-red: #E63946;
+  --color-status-orange: #F77F00;
+  --color-status-yellow: #F1C40F;
+  --color-status-green: #06D6A0;
+  --color-status-blue: #1D3557;
+
+  /* Border Radius - Bauhaus는 주로 직각 사용 */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 2px;
+  --radius-xl: 4px;
+  --radius-full: 0px;
+
+  /* Shadows - 강한 대비 */
+  --shadow-low: 4px 4px 0px rgba(0, 0, 0, 0.15);
+  --shadow-medium: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  --shadow-high: 8px 8px 0px rgba(0, 0, 0, 0.25);
+
+  /* Typography */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 900;
+
+  /* Animation */
+  --transition-quick: 0.15s;
+  --transition-regular: 0.3s;
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --color-bg-primary: #0F172A;
+  --color-bg-secondary: #1E293B;
+  --color-bg-tertiary: #334155;
+  --color-bg-quaternary: #475569;
+
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #CBD5E1;
+  --color-text-tertiary: #94A3B8;
+  --color-text-quaternary: #64748B;
+
+  --color-border-primary: #475569;
+  --color-border-secondary: #64748B;
+  --color-border-tertiary: #94A3B8;
+
+  --shadow-low: 4px 4px 0px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 6px 6px 0px rgba(0, 0, 0, 0.4);
+  --shadow-high: 8px 8px 0px rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-bg-primary);
+  --color-foreground: var(--color-text-primary);
+  --font-sans: "Helvetica Neue", "Arial", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: var(--color-bauhaus-yellow);
+  color: var(--color-bauhaus-black);
+}
+
+/* Bauhaus Geometric Patterns */
+.bauhaus-circle {
+  border-radius: 50%;
+}
+
+.bauhaus-square {
+  aspect-ratio: 1 / 1;
+}
+
+.bauhaus-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }

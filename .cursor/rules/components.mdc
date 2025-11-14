@@ -1,0 +1,544 @@
+---
+alwaysApply: true
+---
+## 📦 사용 가능한 컴포넌트 (10개)
+
+### 1. Button
+**용도**: 모든 액션 버튼
+**Variants**: primary, secondary, ghost, danger, success
+**Sizes**: sm, md, lg
+
+```tsx
+// ✅ 좋은 예시
+<Button variant="primary" size="md">저장</Button>
+<Button variant="secondary" loading={isLoading}>로딩 중</Button>
+<Button leftIcon={<Icon />} fullWidth>전체 너비</Button>
+
+// ❌ 나쁜 예시 - 직접 button 태그 사용 금지
+<button className="px-4 py-2 bg-red-500">버튼</button>
+```
+
+**특징**:
+- 대문자 텍스트 (UPPERCASE)
+- 두꺼운 테두리 (border-2)
+- 호버 시 오프셋 효과
+- loading, disabled 상태 지원
+
+---
+
+### 2. Card
+**용도**: 컨텐츠 그룹화 컨테이너
+**Padding**: none, sm, md, lg
+**Props**: hover (호버 효과), onClick (클릭 가능)
+
+```tsx
+// ✅ 좋은 예시
+<Card padding="md" hover>
+  <Heading level="h3">제목</Heading>
+  <Text>내용</Text>
+</Card>
+
+// ❌ 나쁜 예시 - div로 직접 구현 금지
+<div className="p-6 border rounded-lg">...</div>
+```
+
+**특징**:
+- 직각 모서리
+- 2px 두꺼운 테두리
+- 호버 시 그림자 + 이동 효과
+
+---
+
+### 3. Input
+**용도**: 모든 텍스트 입력
+**Props**: label, error, helperText, leftIcon, rightIcon, fullWidth
+
+```tsx
+// ✅ 좋은 예시
+<Input
+  label="이메일"
+  placeholder="example@email.com"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  error={errors.email}
+  fullWidth
+/>
+
+// ❌ 나쁜 예시 - 직접 input 태그 사용 금지
+<input type="text" className="border p-2" />
+```
+
+**특징**:
+- 2px 테두리
+- 접근성을 위한 label 자동 연결
+- 에러 상태 시각화
+
+---
+
+### 4. Badge
+**용도**: 상태 표시, 레이블
+**Variants**: default, success, warning, error, info
+**Sizes**: sm, md, lg
+**Props**: dot (상태 점 표시)
+
+```tsx
+// ✅ 좋은 예시
+<Badge variant="success" dot>활성</Badge>
+<Badge variant="error">실패</Badge>
+
+// ❌ 나쁜 예시
+<span className="bg-green-500 px-2 py-1">활성</span>
+```
+
+**특징**:
+- 대문자 텍스트
+- 강한 테두리
+- 명확한 색상 구분
+
+---
+
+### 5. Avatar
+**용도**: 사용자 프로필 이미지
+**Sizes**: sm, md, lg, xl
+**Status**: online, offline, busy, away
+
+```tsx
+// ✅ 좋은 예시
+<Avatar name="김철수" size="md" status="online" />
+<Avatar src="/profile.jpg" alt="프로필" size="lg" />
+```
+
+**특징**:
+- 자동 이니셜 생성
+- 상태 표시 점
+- 원형 또는 사각형
+
+---
+
+### 6. Alert
+**용도**: 알림 메시지
+**Variants**: info, success, warning, error
+**Props**: title, onClose (닫기 버튼)
+
+```tsx
+// ✅ 좋은 예시
+<Alert variant="success" title="성공">
+  작업이 완료되었습니다.
+</Alert>
+
+<Alert variant="error" onClose={() => setShow(false)}>
+  오류가 발생했습니다.
+</Alert>
+```
+
+**특징**:
+- 8px 왼쪽 강조선
+- 명확한 아이콘
+- 닫기 버튼 옵션
+
+---
+
+### 7. Modal
+**용도**: 모달 다이얼로그
+**Sizes**: sm, md, lg, xl
+**Props**: isOpen, onClose, title, footer
+
+```tsx
+// ✅ 좋은 예시
+<Modal
+  isOpen={isOpen}
+  onClose={() => setIsOpen(false)}
+  title="확인"
+  footer={
+    <>
+      <Button variant="secondary" onClick={() => setIsOpen(false)}>
+        취소
+      </Button>
+      <Button onClick={handleConfirm}>확인</Button>
+    </>
+  }
+>
+  <Text>정말 삭제하시겠습니까?</Text>
+</Modal>
+```
+
+**특징**:
+- ESC 키로 닫기
+- 배경 클릭으로 닫기
+- 4px 두꺼운 테두리
+
+---
+
+### 8. Tabs
+**용도**: 탭 네비게이션
+**컴포넌트**: Tabs, TabsList, TabsTrigger, TabsContent
+
+```tsx
+// ✅ 좋은 예시
+<Tabs defaultValue="tab1" onChange={(value) => console.log(value)}>
+  <TabsList>
+    <TabsTrigger value="tab1">탭 1</TabsTrigger>
+    <TabsTrigger value="tab2">탭 2</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">내용 1</TabsContent>
+  <TabsContent value="tab2">내용 2</TabsContent>
+</Tabs>
+```
+
+**특징**:
+- 하단 강조선 스타일
+- 대문자 텍스트
+- Context API 기반
+
+---
+
+### 9. Select
+**용도**: 드롭다운 선택 메뉴
+**Props**: options, value, onChange, label, error, fullWidth
+
+```tsx
+// ✅ 좋은 예시
+const options = [
+  { value: 'option1', label: 'Option 1' },
+  { value: 'option2', label: 'Option 2' },
+];
+
+<Select
+  label="카테고리"
+  options={options}
+  value={selected}
+  onChange={setSelected}
+  fullWidth
+/>
+```
+
+**특징**:
+- 2px 테두리
+- 커스텀 드롭다운
+- disabled 옵션 지원
+
+---
+
+### 10. Typography (Heading, Text)
+**용도**: 모든 텍스트 표시
+
+#### Heading
+**Levels**: h1, h2, h3, h4, h5, h6
+
+```tsx
+// ✅ 좋은 예시
+<Heading level="h1">MAIN TITLE</Heading>
+<Heading level="h2">Subtitle</Heading>
+
+// ❌ 나쁜 예시 - 직접 h1 태그 사용 금지
+<h1 className="text-4xl font-bold">Title</h1>
+```
+
+**특징**:
+- 자동 UPPERCASE
+- 두꺼운 폰트 (font-bold, font-black)
+- 일관된 간격
+
+#### Text
+**Sizes**: large, regular, small, mini, micro
+**Colors**: primary, secondary, tertiary, quaternary
+**Weights**: normal, medium, semibold, bold
+
+```tsx
+// ✅ 좋은 예시
+<Text size="large" weight="bold">중요한 내용</Text>
+<Text color="secondary">보조 설명</Text>
+```
+
+---
+
+## 🎨 색상 사용 규칙
+
+### CSS 변수 사용 (권장)
+```css
+/* 바우하우스 원색 */
+var(--color-bauhaus-red)      /* #E63946 - 주요 액션 */
+var(--color-bauhaus-blue)     /* #1D3557 - 신뢰, 안정 */
+var(--color-bauhaus-yellow)   /* #F1C40F - 강조, 주의 */
+var(--color-bauhaus-black)    /* #000000 - 테두리, 텍스트 */
+
+/* 상태 색상 */
+var(--color-status-green)     /* 성공 */
+var(--color-status-red)       /* 오류 */
+var(--color-status-orange)    /* 경고 */
+var(--color-status-blue)      /* 정보 */
+
+/* 배경 색상 */
+var(--color-bg-primary)       /* #FAFAFA - 메인 배경 */
+var(--color-bg-secondary)     /* #FFFFFF - 카드 배경 */
+var(--color-bg-tertiary)      /* #F5F5F5 */
+
+/* 텍스트 색상 */
+var(--color-text-primary)     /* #000000 - 주요 텍스트 */
+var(--color-text-secondary)   /* #2C3E50 - 보조 텍스트 */
+var(--color-text-tertiary)    /* #5A6C7D */
+```
+
+### 색상 선택 가이드
+- **Red**: 삭제, 오류, 위험 액션
+- **Blue**: 주요 네비게이션, 링크
+- **Yellow**: 경고, 주의, 강조
+- **Green**: 성공, 완료, 긍정
+- **Black**: 테두리, 주요 텍스트
+
+---
+
+## 📐 레이아웃 규칙
+
+### 1. 간격 (Spacing)
+```tsx
+// ✅ 좋은 예시 - Tailwind 유틸리티 사용
+<div className="space-y-6">
+  <Card>...</Card>
+  <Card>...</Card>
+</div>
+
+<div className="flex gap-4">
+  <Button>...</Button>
+  <Button>...</Button>
+</div>
+```
+
+**권장 간격**: 4, 6, 8, 12, 16, 24 (4의 배수)
+
+### 2. Border Radius
+```tsx
+// ✅ 바우하우스는 직각 사용
+<div className="rounded-none">  // 0px
+<div className="rounded-sm">    // 2px (최소)
+
+// ❌ 둥근 모서리 사용 지양
+<div className="rounded-lg">
+<div className="rounded-full">
+```
+
+### 3. 그림자 (Shadow)
+```tsx
+// ✅ 오프셋 그림자 사용
+shadow-[var(--shadow-low)]      // 4px 4px 0px
+shadow-[var(--shadow-medium)]   // 6px 6px 0px
+shadow-[var(--shadow-high)]     // 8px 8px 0px
+
+// 호버 효과
+hover:translate-x-[-3px] hover:translate-y-[-3px]
+hover:shadow-[var(--shadow-medium)]
+```
+
+---
+
+## 🎯 코딩 컨벤션
+
+### 1. TypeScript 타입 안전성
+```tsx
+// ✅ Props 타입 정의 사용
+import type { ButtonProps, CardProps } from '@/app/components/ui';
+
+// 컴포넌트 생성 시 타입 명시
+const MyComponent: React.FC<MyComponentProps> = ({ ... }) => {
+  // ...
+};
+```
+
+### 2. 상태 관리
+```tsx
+// ✅ useState 명명 규칙
+const [isOpen, setIsOpen] = useState(false);
+const [selectedItem, setSelectedItem] = useState<string>('');
+const [loading, setLoading] = useState(false);
+
+// ❌ 나쁜 예시
+const [open, setOpen] = useState(false);  // 명확하지 않음
+const [item, setItem] = useState('');     // 타입 누락
+```
+
+### 3. 이벤트 핸들러
+```tsx
+// ✅ 명확한 핸들러 네이밍
+const handleSubmit = () => { ... };
+const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => { ... };
+const handleModalClose = () => { ... };
+
+// ❌ 나쁜 예시
+const submit = () => { ... };
+const change = () => { ... };
+```
+
+### 4. 컴포넌트 구조
+```tsx
+// ✅ 권장 구조
+export default function MyPage() {
+  // 1. State
+  const [state, setState] = useState();
+
+  // 2. Handlers
+  const handleAction = () => { ... };
+
+  // 3. Effects
+  useEffect(() => { ... }, []);
+
+  // 4. Render
+  return (
+    <div>
+      <Heading level="h1">TITLE</Heading>
+      <Card>
+        <Text>Content</Text>
+        <Button onClick={handleAction}>Action</Button>
+      </Card>
+    </div>
+  );
+}
+```
+
+---
+
+## 🚫 금지 사항
+
+### 1. HTML 태그 직접 사용 금지
+```tsx
+// ❌ 금지
+<button>버튼</button>
+<input type="text" />
+<h1>제목</h1>
+<p>본문</p>
+<div className="bg-red-500 p-4 rounded-lg">카드</div>
+
+// ✅ 대신 컴포넌트 사용
+<Button>버튼</Button>
+<Input />
+<Heading level="h1">제목</Heading>
+<Text>본문</Text>
+<Card>카드</Card>
+```
+
+### 2. 인라인 스타일 금지
+```tsx
+// ❌ 금지
+<div style={{ backgroundColor: 'red', padding: '16px' }}>
+
+// ✅ CSS 변수 사용
+<div className="bg-[var(--color-bauhaus-red)] p-4">
+```
+
+### 3. 둥근 모서리 금지
+```tsx
+// ❌ 바우하우스에 맞지 않음
+rounded-full, rounded-lg, rounded-xl
+
+// ✅ 직각 유지
+rounded-none, rounded-sm (최대 2px)
+```
+
+### 4. 부드러운 그림자 금지
+```tsx
+// ❌ 금지
+shadow-sm, shadow-md, shadow-lg
+
+// ✅ 오프셋 그림자 사용
+shadow-[4px_4px_0px_rgba(0,0,0,0.2)]
+```
+
+---
+
+## 📱 반응형 디자인
+
+### Breakpoints
+```tsx
+// Mobile First 접근
+<div className="
+  grid grid-cols-1          /* 모바일 */
+  md:grid-cols-2            /* 태블릿 */
+  lg:grid-cols-3            /* 데스크톱 */
+  gap-4
+">
+```
+
+### 반응형 텍스트
+```tsx
+<Heading level="h1" className="
+  text-4xl          /* 모바일 */
+  md:text-5xl       /* 태블릿 */
+  lg:text-7xl       /* 데스크톱 */
+">
+```
+
+---
+
+## 🎨 기하학적 장식 요소
+
+### 배경 장식
+```tsx
+// 페이지에 바우하우스 분위기 추가
+<div className="fixed inset-0 pointer-events-none overflow-hidden">
+  <div className="absolute top-20 right-20 w-32 h-32 bg-[var(--color-bauhaus-red)] opacity-80 rounded-full" />
+  <div className="absolute bottom-20 left-20 w-40 h-40 bg-[var(--color-bauhaus-yellow)] opacity-70" />
+  <div className="absolute top-1/2 right-10 w-24 h-24 border-8 border-[var(--color-bauhaus-black)] opacity-40" />
+</div>
+```
+
+### 섹션 강조
+```tsx
+// 빨간 수직선으로 섹션 강조
+<div className="flex items-start gap-4">
+  <div className="w-2 h-12 bg-[var(--color-accent)]" />
+  <div>
+    <Heading level="h2">SECTION TITLE</Heading>
+    <Text color="tertiary">Description</Text>
+  </div>
+</div>
+```
+
+---
+
+## ✅ 체크리스트
+
+새로운 페이지나 기능을 만들 때:
+
+- [ ] 기존 UI 컴포넌트를 사용했는가?
+- [ ] 대문자를 적절히 사용했는가? (헤딩, 버튼)
+- [ ] 원색(빨강, 파랑, 노랑)을 효과적으로 사용했는가?
+- [ ] 직각 디자인을 유지했는가?
+- [ ] 오프셋 그림자를 사용했는가?
+- [ ] TypeScript 타입을 정의했는가?
+- [ ] 반응형 디자인을 고려했는가?
+- [ ] 접근성을 고려했는가? (label, alt 등)
+
+---
+
+## 📚 참고 자료
+
+### 컴포넌트 데모
+- 경로: `/components`
+- 모든 컴포넌트의 실제 동작과 사용 예시 확인 가능
+
+### 디자인 시스템 문서
+- 위치: `app/components/README.md`
+- 각 컴포넌트의 상세한 Props 및 사용법
+
+### 바우하우스 철학
+- 형태는 기능을 따른다 (Form Follows Function)
+- 기하학적 순수성 (Geometric Purity)
+- 산업적 생산 (Industrial Production)
+- 예술과 기술의 통합 (Art and Technology)
+
+---
+
+## 🎯 프로젝트 목표
+
+이 디자인 시스템의 목표는:
+1. **일관성**: 모든 페이지에서 동일한 UI/UX
+2. **재사용성**: DRY 원칙, 컴포넌트 재사용
+3. **유지보수성**: 중앙 집중화된 컴포넌트 관리
+4. **타입 안전성**: TypeScript로 버그 방지
+5. **바우하우스 정신**: 기능적이고 아름다운 디자인
+
+---
+
+**버전**: 1.0.0
+**최종 업데이트**: 2025-11-14
+**디자인 시스템**: Bauhaus (바우하우스)
+

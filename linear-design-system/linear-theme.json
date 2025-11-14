@@ -1,0 +1,278 @@
+{
+  "themeName": "Linear Design System",
+  "description": "Complete design system extracted from Linear.app website",
+  "extractedFrom": "https://linear.app/",
+  "extractedDate": "2025-11-14",
+  "colorPalette": {
+    "brand": {
+      "primary": "#5e6ad2",
+      "text": "#fff"
+    },
+    "background": {
+      "primary": "#08090a",
+      "secondary": "#1c1c1f",
+      "tertiary": "#232326",
+      "quaternary": "#28282c",
+      "quinary": "#282828",
+      "level0": "#08090a",
+      "level1": "#0f1011",
+      "level2": "#141516",
+      "level3": "#191a1b",
+      "tint": "#141516",
+      "marketing": "#010102",
+      "translucent": "rgba(255,255,255,.05)"
+    },
+    "text": {
+      "primary": "#f7f8f8",
+      "secondary": "#d0d6e0",
+      "tertiary": "#8a8f98",
+      "quaternary": "#62666d"
+    },
+    "foreground": {
+      "primary": "#f7f8f8",
+      "secondary": "#d0d6e0",
+      "tertiary": "#8a8f98",
+      "quaternary": "#62666d"
+    },
+    "border": {
+      "primary": "#23252a",
+      "secondary": "#34343a",
+      "tertiary": "#3e3e44",
+      "translucent": "rgba(255,255,255,.05)"
+    },
+    "line": {
+      "primary": "#37393a",
+      "secondary": "#202122",
+      "tertiary": "#18191a",
+      "quaternary": "#141515",
+      "tint": "#141516"
+    },
+    "accent": {
+      "primary": "#7170ff",
+      "hover": "#828fff",
+      "tint": "#18182f",
+      "indigo": "#5e6ad2"
+    },
+    "link": {
+      "primary": "#828fff",
+      "hover": "#fff"
+    },
+    "status": {
+      "red": "#eb5757",
+      "orange": "#fc7840",
+      "yellow": "#f2c94c",
+      "green": "#4cb782",
+      "blue": "#4ea7fc"
+    },
+    "linear": {
+      "plan": "#68cc58",
+      "build": "#d4b144",
+      "security": "#7a7fad"
+    },
+    "selection": {
+      "background": "color-mix(in lch,#5e6ad2,black 10%)",
+      "text": "#fff",
+      "dim": "color-mix(in lch,#5e6ad2,transparent 80%)"
+    }
+  },
+  "typography": {
+    "headings": {
+      "title9": {
+        "size": "4.5rem",
+        "lineHeight": "1",
+        "letterSpacing": "-.022em",
+        "description": "Extra Large Hero (72px)"
+      },
+      "title8": {
+        "size": "4rem",
+        "lineHeight": "1.06",
+        "letterSpacing": "-.022em",
+        "description": "Large Hero (64px)"
+      },
+      "title7": {
+        "size": "3.5rem",
+        "lineHeight": "1.1",
+        "letterSpacing": "-.022em",
+        "description": "Hero (56px)"
+      },
+      "title6": {
+        "size": "3rem",
+        "lineHeight": "1.1",
+        "letterSpacing": "-.022em",
+        "description": "Display (48px)"
+      },
+      "title5": {
+        "size": "2.5rem",
+        "lineHeight": "1.1",
+        "letterSpacing": "-.022em",
+        "description": "H1 (40px)"
+      },
+      "title4": {
+        "size": "2rem",
+        "lineHeight": "1.125",
+        "letterSpacing": "-.022em",
+        "description": "H2 (32px)"
+      },
+      "title3": {
+        "size": "1.5rem",
+        "lineHeight": "1.33",
+        "letterSpacing": "-.012em",
+        "description": "H3 (24px)"
+      },
+      "title2": {
+        "size": "1.3125rem",
+        "lineHeight": "1.33",
+        "letterSpacing": "-.012em",
+        "description": "H4 (21px)"
+      },
+      "title1": {
+        "size": "1.0625rem",
+        "lineHeight": "1.4",
+        "letterSpacing": "-.012em",
+        "description": "H5 (17px)"
+      }
+    },
+    "body": {
+      "large": {
+        "size": "1.0625rem",
+        "lineHeight": "1.6",
+        "letterSpacing": "0",
+        "description": "17px"
+      },
+      "regular": {
+        "size": ".9375rem",
+        "lineHeight": "1.6",
+        "letterSpacing": "-.011em",
+        "description": "15px (base)"
+      },
+      "small": {
+        "size": ".875rem",
+        "lineHeight": "calc(21/14)",
+        "letterSpacing": "-.013em",
+        "description": "14px"
+      },
+      "mini": {
+        "size": ".8125rem",
+        "lineHeight": "1.5",
+        "letterSpacing": "-.01em",
+        "description": "13px"
+      },
+      "micro": {
+        "size": ".75rem",
+        "lineHeight": "1.4",
+        "letterSpacing": "0",
+        "description": "12px"
+      },
+      "tiny": {
+        "size": ".625rem",
+        "lineHeight": "1.5",
+        "letterSpacing": "-.015em",
+        "description": "10px"
+      }
+    },
+    "fontFamilies": {
+      "regular": "\"Inter Variable\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "monospace": "\"Berkeley Mono\", ui-monospace, \"SF Mono\", \"Menlo\", monospace",
+      "serifDisplay": "\"Tiempos Headline\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "emoji": "\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Segoe UI\", \"Twemoji Mozilla\", \"Noto Color Emoji\", \"Android Emoji\""
+    },
+    "fontWeights": {
+      "light": "300",
+      "normal": "400",
+      "medium": "510",
+      "semibold": "590",
+      "bold": "680"
+    }
+  },
+  "borderRadius": {
+    "circle": "50%",
+    "rounded": "9999px",
+    "r4": "4px",
+    "r6": "6px",
+    "r8": "8px",
+    "r12": "12px",
+    "r16": "16px",
+    "r24": "24px",
+    "r32": "32px"
+  },
+  "shadows": {
+    "none": "0px 0px 0px transparent",
+    "tiny": "0px 0px 0px transparent",
+    "low": "0px 2px 4px rgba(0,0,0,.1)",
+    "medium": "0px 4px 24px rgba(0,0,0,.2)",
+    "high": "0px 7px 32px rgba(0,0,0,.35)",
+    "stackLow": "0px 8px 2px 0px transparent,0px 5px 2px 0px rgba(0,0,0,.01),0px 3px 2px 0px rgba(0,0,0,.04),0px 1px 1px 0px rgba(0,0,0,.07),0px 0px 1px 0px rgba(0,0,0,.08)"
+  },
+  "spacing": {
+    "headerHeight": "64px",
+    "pagePaddingInline": "24px",
+    "pagePaddingBlock": "64px",
+    "pageMaxWidth": "1024px",
+    "proseMaxWidth": "624px",
+    "minTapSize": "44px"
+  },
+  "animations": {
+    "easing": {
+      "linear": "linear",
+      "easeInQuad": "cubic-bezier(.55,.085,.68,.53)",
+      "easeOutQuad": "cubic-bezier(.25,.46,.45,.94)",
+      "easeInOutQuad": "cubic-bezier(.455,.03,.515,.955)",
+      "easeInCubic": "cubic-bezier(.55,.055,.675,.19)",
+      "easeOutCubic": "cubic-bezier(.215,.61,.355,1)",
+      "easeInOutCubic": "cubic-bezier(.645,.045,.355,1)",
+      "easeInQuart": "cubic-bezier(.895,.03,.685,.22)",
+      "easeOutQuart": "cubic-bezier(.165,.84,.44,1)",
+      "easeInOutQuart": "cubic-bezier(.77,0,.175,1)",
+      "easeInQuint": "cubic-bezier(.755,.05,.855,.06)",
+      "easeOutQuint": "cubic-bezier(.23,1,.32,1)",
+      "easeInOutQuint": "cubic-bezier(.86,0,.07,1)",
+      "easeInExpo": "cubic-bezier(.95,.05,.795,.035)",
+      "easeOutExpo": "cubic-bezier(.19,1,.22,1)",
+      "easeInOutExpo": "cubic-bezier(1,0,0,1)",
+      "easeInCirc": "cubic-bezier(.6,.04,.98,.335)",
+      "easeOutCirc": "cubic-bezier(.075,.82,.165,1)",
+      "easeInOutCirc": "cubic-bezier(.785,.135,.15,.86)"
+    },
+    "transitionSpeeds": {
+      "quickTransition": ".1s",
+      "regularTransition": ".25s",
+      "highlightFadeIn": "0s",
+      "highlightFadeOut": ".15s"
+    }
+  },
+  "cssVariables": {
+    "usage": "이 변수들은 CSS에서 var(--변수명) 형식으로 사용할 수 있습니다.",
+    "colors": {
+      "--color-brand-bg": "#5e6ad2",
+      "--color-brand-text": "#fff",
+      "--color-bg-primary": "#08090a",
+      "--color-bg-secondary": "#1c1c1f",
+      "--color-text-primary": "#f7f8f8",
+      "--color-text-secondary": "#d0d6e0",
+      "--color-accent": "#7170ff",
+      "--color-accent-hover": "#828fff"
+    },
+    "typography": {
+      "--font-regular": "\"Inter Variable\",\"SF Pro Display\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Open Sans\",\"Helvetica Neue\",sans-serif",
+      "--font-weight-normal": "400",
+      "--font-weight-medium": "510",
+      "--font-weight-semibold": "590",
+      "--font-weight-bold": "680"
+    },
+    "spacing": {
+      "--header-height": "64px",
+      "--page-padding-inline": "24px",
+      "--page-padding-block": "64px",
+      "--page-max-width": "1024px"
+    }
+  },
+  "designPrinciples": {
+    "darkMode": "다크 모드가 기본 테마입니다 (dark-first design)",
+    "fontSystem": "Inter Variable을 주 폰트로 사용하며, 시스템 폰트 폴백을 제공합니다",
+    "colorSystem": "계층적 색상 시스템 (primary, secondary, tertiary, quaternary)",
+    "spacing": "일관된 간격 시스템 (4px 기반 그리드)",
+    "animations": "다양한 easing 함수를 활용한 부드러운 애니메이션",
+    "accessibility": "최소 터치 영역 44px 보장"
+  }
+}
+
