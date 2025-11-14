@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import { createClient } from '@/lib/supabase/client';
-import { loadTossPayments } from '@tosspayments/payment-sdk';
+import { loadTossPayments } from '@tosspayments/tosspayments-sdk';
 import { Card, Button, Heading, Text } from '../components/ui';
 import { Prompt } from '@/types/database.types';
 import { getCart } from '@/lib/cart';
