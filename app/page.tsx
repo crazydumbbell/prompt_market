@@ -27,7 +27,7 @@ export default async function Home() {
   console.log("  ✅ 전체:", prompts?.length || 0, "개");
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg-primary)]">
+    <div className="min-h-screen bg-[var(--color-bg-primary)] flex flex-col">
       {/* Hero Section */}
       <div className="bg-[var(--color-bg-secondary)] border-b-4 border-[var(--color-border-primary)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
@@ -204,6 +204,18 @@ export default async function Home() {
           </a>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="border-t-4 border-[var(--color-border-primary)] bg-[var(--color-bg-secondary)] py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-row items-center justify-center gap-6">
+          <Text size="small" color="tertiary">
+            사업자 등록정보 : 640-03-02563
+          </Text>
+          <Text size="small" color="tertiary">
+            대표 : 김재현
+          </Text>
+        </div>
+      </footer>
     </div>
   );
 }
