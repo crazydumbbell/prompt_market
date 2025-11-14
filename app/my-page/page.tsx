@@ -23,6 +23,8 @@ export default async function MyPage() {
       `
       id,
       created_at,
+      buyer_id,
+      prompt_id,
       payment_order_id,
       payment_amount,
       payment_status,
