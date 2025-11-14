@@ -93,17 +93,29 @@ export default function CheckoutPage() {
 
       // Toss Payments 초기화
       const clientKey = process.env.NEXT_PUBLIC_TOSS_CLIENT_KEY!;
+      const customerKey = user?.id || 'GUEST';
       const tossPayments = await loadTossPayments(clientKey);
+      const payment = tossPayments.payment({ customerKey });
 
       // 결제창 호출
-      await tossPayments.requestPayment('카드', {
-        amount: totalAmount,
+      await payment.requestPayment({
+        method: 'CARD',
+        amount: {
+          currency: 'KRW',
+          value: totalAmount,
+        },
         orderId: orderId,
         orderName: orderName,
         customerName: user?.fullName || user?.firstName || '고객',
         customerEmail: user?.emailAddresses[0]?.emailAddress,
         successUrl: `${window.location.origin}/checkout/success`,
         failUrl: `${window.location.origin}/checkout/fail`,
+        card: {
+          useEscrow: false,
+          flowMode: 'DEFAULT',
+          useCardPoint: false,
+          useAppCardOnly: false,
+        },
       });
     } catch (error) {
       console.error('Payment error:', error);
